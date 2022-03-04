@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "license": "ISC",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "yarn workspace library build",
+    "dev:vue2": "yarn build && yarn workspace example-vue2 dev",
+    "dev:vue3": "yarn build && yarn workspace example-vue3 dev"
+  },
+  "packageManager": "yarn@3.1.1"
+}
