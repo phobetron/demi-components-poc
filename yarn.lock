@@ -1619,6 +1619,7 @@ __metadata:
   dependencies:
     "@types/node": ^16.11.25
     "@vue/composition-api": ^1.4.6
+    "@vue/tsconfig": ^0.1.3
     library: "workspace:*"
     typescript: ~4.5.5
     vite: ^2.8.4
