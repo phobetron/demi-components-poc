@@ -1,15 +1,15 @@
 import { fileURLToPath, URL } from "url";
 import path from "path";
 import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
+import { createVuePlugin } from 'vite-plugin-vue2';
 import dts from "vite-plugin-dts";
 import tsConfigPaths from "vite-tsconfig-paths";
 
-// https://vitejs.dev/config/
 export default defineConfig({
   build: {
+    outDir: "dist/vue2",
     lib: {
-      entry: path.resolve(__dirname, "./src/index.ts"),
+      entry: path.resolve(__dirname, "./src/components/index.ts"),
       name: "Library",
       formats: ["es"],
       fileName: () => "index.js",
@@ -24,7 +24,7 @@ export default defineConfig({
       },
     },
   },
-  plugins: [tsConfigPaths(), vue(), dts()],
+  plugins: [tsConfigPaths(), createVuePlugin(), dts()],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

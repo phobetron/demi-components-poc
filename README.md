@@ -1,4 +1,6 @@
-# PoC: Vue 2 & 3 Component Library with `vue-demi`
+# PoC: Vue 2 & 3 SFC Component Library with `vue-demi`
+
+WIP: This PoC does not work as-is, will attempt to use `handpick`
 
 ## Install
 
@@ -6,7 +8,7 @@
 yarn install
 ```
 
-## Vue 3 (works)
+## Vue 3 (does not work)
 
 ```sh
 yarn dev:vue3
@@ -16,10 +18,4 @@ yarn dev:vue3
 
 ```sh
 yarn dev:vue2
-```
-
-### Error Message
-
-```plain text
-Uncaught SyntaxError: The requested module '/node_modules/.vite/vue.js?v=c2bff7da' does not provide an export named 'createElementBlock'
 ```

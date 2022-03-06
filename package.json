@@ -5,12 +5,14 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn workspace library build",
-    "dev:vue2": "yarn build && yarn workspace example-vue2 dev",
-    "dev:vue3": "yarn build && yarn workspace example-vue3 dev"
+    "build:vue2": "yarn workspace library build:vue2",
+    "build:vue3": "yarn workspace library build:vue3",
+    "build:switch:vue2": "yarn workspace library build:switch:vue2",
+    "build:switch:vue3": "yarn workspace library build:switch:vue3",
+    "dev:preview2": "yarn build:switch:vue2 && yarn workspace example-vue2 preview",
+    "dev:preview3": "yarn build:switch:vue3 && yarn workspace example-vue3 preview",
+    "dev:vue2": "yarn build:switch:vue2 && yarn workspace example-vue2 dev",
+    "dev:vue3": "yarn build:switch:vue3 && yarn workspace example-vue3 dev"
   },
-  "packageManager": "yarn@3.1.1",
-  "installConfig": {
-    "hoistingLimits": "workspaces"
-  }
+  "packageManager": "yarn@3.1.1"
 }
