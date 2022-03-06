@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { HelloWorld } from 'library'
+import { HelloWorld } from 'library-vue3'
 
 export default {
   components: {
