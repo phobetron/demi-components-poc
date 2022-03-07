@@ -7,8 +7,10 @@ import tsConfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   build: {
+    outDir: "../library/dist/vue2",
+    emptyOutDir: true,
     lib: {
-      entry: path.resolve(__dirname, "../library/src/lib/index.ts"),
+      entry: path.resolve(__dirname, "../library/src/components/index.ts"),
       name: "Library",
       formats: ["es"],
       fileName: () => "index.js",

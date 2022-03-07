@@ -6,15 +6,6 @@
     "build": "yarn typecheck && vite build",
     "typecheck": "vue-tsc --noEmit"
   },
-  "files": [
-    "dist/**/*"
-  ],
-  "module": "dist/index.js",
-  "types": "dist/src/index.d.ts",
-  "exports": {
-    "import": "./dist/index.js",
-    "types": "./dist/src/index.d.ts"
-  },
   "dependencies": {
     "vue-demi": "latest"
   },

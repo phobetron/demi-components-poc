@@ -1,4 +1,8 @@
-# PoC: Vue 2 & 3 Component Library with `vue-demi`
+# PoC: Vue 2 & 3 SFC Component Library with `vue-demi`
+
+This PoC creates two separate Vue version-specific packages that reference the same component source code. A third
+package, intended to be published, joins the build artifacts of the two and selects one depending on the consumer's
+installed Vue version.
 
 ## Install
 
@@ -6,20 +10,14 @@
 yarn install
 ```
 
-## Vue 3 (works)
+## Vue 3
 
 ```sh
 yarn dev:vue3
 ```
 
-## Vue 2 (does not work)
+## Vue 2
 
 ```sh
 yarn dev:vue2
-```
-
-### Error Message
-
-```plain text
-Uncaught SyntaxError: The requested module '/node_modules/.vite/vue.js?v=c2bff7da' does not provide an export named 'createElementBlock'
 ```

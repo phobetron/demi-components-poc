@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "name": "library",
+  "version": "0.0.0",
+  "files": [
+    "dist/**/*"
+  ],
+  "module": "dist/vue3/index.js",
+  "types": "dist/vue3/src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/vue3/index.js",
+      "types": "./dist/vue3/src/index.d.ts"
+    },
+    "./vue2": {
+      "import": "./dist/vue2/index.js",
+      "types": "./dist/vue2/src/index.d.ts"
+    }
+  },
+  "dependencies": {
+    "vue-demi": "latest"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "^1.4.9",
+    "vue": "^2.0.0 || >=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
+  }
+}
