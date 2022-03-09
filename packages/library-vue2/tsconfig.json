@@ -1,5 +1,7 @@
 {
-  "include": ["env.d.ts", "src/*"],
+  "rootDir": "../library/src/components",
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": ["env.d.ts", "**/*", "**/*.vue"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
