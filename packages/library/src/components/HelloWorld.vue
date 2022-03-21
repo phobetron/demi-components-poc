@@ -1,15 +1,26 @@
 <template>
-  <button @click="action">Click</button>
+  <h1 class="helloWorld">
+    Hello
+    <span v-if="isVue2">Vue2</span>
+    <span v-if="isVue3">Vue3</span>
+  </h1>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue-demi";
+import { defineComponent, isVue2, isVue3 } from "vue-demi";
 
 export default defineComponent({
-  methods: {
-    action() {
-      console.log("Hello World");
-    },
+  data() {
+    return {
+      isVue2,
+      isVue3,
+    };
   },
 });
 </script>
+
+<style lang="scss">
+.helloWorld {
+  color: mediumseagreen;
+}
+</style>

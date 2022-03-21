@@ -5,14 +5,15 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn build:prerequisites",
-    "build:prerequisites": "yarn build:vue2 && yarn build:vue3",
+    "build": "yarn build:vue2 && yarn build:vue3",
     "build:vue2": "yarn workspace library-vue2 build",
     "build:vue3": "yarn workspace library-vue3 build",
     "dev:preview2": "yarn build && yarn workspace example-vue2 preview",
     "dev:preview3": "yarn build && yarn workspace example-vue3 preview",
-    "dev:vue2": "yarn build && yarn workspace example-vue2 dev",
-    "dev:vue3": "yarn build && yarn workspace example-vue3 dev"
+    "dev:vue2": "yarn build && yarn switch2 && yarn workspace example-vue2 dev",
+    "dev:vue3": "yarn build && yarn switch3 && yarn workspace example-vue3 dev",
+    "switch2": "yarn workspace library switch2",
+    "switch3": "yarn workspace library switch3"
   },
   "packageManager": "yarn@3.1.1"
 }

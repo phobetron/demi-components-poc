@@ -5,20 +5,32 @@
   "files": [
     "dist/**/*"
   ],
-  "module": "dist/vue3/index.js",
-  "types": "dist/vue3/src/index.d.ts",
+  "module": "dist/vue2/index.js",
+  "types": "dist/vue2/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/vue3/index.js",
-      "types": "./dist/vue3/src/index.d.ts"
+      "types": "./dist/vue3/index.d.ts"
     },
     "./vue2": {
       "import": "./dist/vue2/index.js",
-      "types": "./dist/vue2/src/index.d.ts"
-    }
+      "types": "./dist/vue2/index.d.ts"
+    },
+    "./vue3": {
+      "import": "./dist/vue3/index.js",
+      "types": "./dist/vue3/index.d.ts"
+    },
+    "./style": "./dist/vue3/style.css"
+  },
+  "scripts": {
+    "switch2": "npx vue-demi-switch 2 vue2",
+    "switch3": "npx vue-demi-switch 3"
   },
   "dependencies": {
-    "vue-demi": "latest"
+    "@vue/composition-api": "^1.4.9",
+    "vue": "^3.2.31",
+    "vue-demi": "latest",
+    "vue2": "npm:vue@^2.6.14"
   },
   "peerDependencies": {
     "@vue/composition-api": "^1.4.9",
