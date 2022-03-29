@@ -24,10 +24,5 @@ export default defineConfig({
       },
     },
   },
-  plugins: [tsConfigPaths(), createVuePlugin()],
-  resolve: {
-    alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
-    },
-  },
+  plugins: [tsConfigPaths(), createVuePlugin()]
 });

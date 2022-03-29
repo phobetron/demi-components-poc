@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "../library/src",
+    "baseUrl": ".",
     "declaration": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
@@ -10,9 +10,9 @@
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
     "module": "esnext",
     "moduleResolution": "node",
-    "outDir": "../library/dist/vue2",
+    "outDir": "../library/dist/vue2/src",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["../library/src/*"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,
@@ -22,10 +22,15 @@
     "types": ["node", "vite/client"],
     "useDefineForClassFields": false
   },
-  "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": [
     "../library/src/**/*.ts",
     "../library/src/**/*.d.ts",
     "../library/src/**/*.vue"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "../design-system/src/testing",
+    "../design-system/src/**/*.spec.ts"
   ]
 }

@@ -23,6 +23,5 @@
     "types": ["node", "vite/client"],
     "useDefineForClassFields": false
   },
-  "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": ["**/*.ts", "**/*.d.ts", "**/*.vue"]
 }
