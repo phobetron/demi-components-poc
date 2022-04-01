@@ -1,12 +1,7 @@
 <template>
   <p class="helloWorld" :class="{ '-vue2': isVue2, '-vue3': isVue3 }">
     <label for="helloWorld">Who are you?</label>
-    <input
-      type="text"
-      id="helloWorld"
-      :value="propValue"
-      @input="updateValue"
-    />
+    <input type="text" id="helloWorld" v-model="compatibleValue" />
   </p>
 </template>
 
@@ -25,20 +20,17 @@ export default defineComponent({
     };
   },
   computed: {
-    propValue(): string | undefined {
-      return isVue2 ? this.value : this.modelValue;
-    },
-  },
-  methods: {
-    updateValue(event: Event): void {
-      if (isVue2) {
-        this.$emit("input", (event.target as HTMLInputElement).value);
-      } else {
-        this.$emit(
-          "update:modelValue",
-          (event.target as HTMLInputElement).value
-        );
-      }
+    compatibleValue: {
+      get(): string | undefined {
+        return isVue2 ? this.value : this.modelValue;
+      },
+      set(value: string): void {
+        if (isVue2) {
+          this.$emit("input", value);
+        } else {
+          this.$emit("update:modelValue", value);
+        }
+      },
     },
   },
 });
