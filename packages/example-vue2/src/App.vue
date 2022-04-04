@@ -1,28 +1,38 @@
 <template>
   <div>
-    <hello-world v-model="suffix" />
-    <p v-if="suffix">
-      <output>{{ output }}</output>
+    <hello-options v-model="optionsSuffix" />
+    <p v-if="optionsSuffix">
+      <output>{{ optionsOutput }}</output>
+    </p>
+    <hr />
+    <hello-setup v-model="setupSuffix" />
+    <p v-if="setupSuffix">
+      <output>{{ setupOutput }}</output>
     </p>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import { HelloWorld } from "library/vue2";
+import { HelloOptions, HelloSetup } from "library/vue2";
 
 export default defineComponent({
   components: {
-    HelloWorld,
+    HelloOptions,
+    HelloSetup,
   },
   data() {
     return {
-      suffix: "",
+      optionsSuffix: "",
+      setupSuffix: "",
     };
   },
   computed: {
-    output() {
-      return `Hello ${this.suffix}`;
+    optionsOutput(): string {
+      return `Hello ${this.optionsSuffix}`;
+    },
+    setupOutput(): string {
+      return `Hello ${this.setupSuffix}`;
     },
   },
 });

@@ -1,1 +1,2 @@
-export { default as HelloWorld } from "./HelloWorld.vue";
+export { default as HelloOptions } from "./HelloOptions.vue";
+export { default as HelloSetup } from "./HelloSetup.vue";
