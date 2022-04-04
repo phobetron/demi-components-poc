@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
+    "baseUrl": "../library/src",
     "declaration": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
@@ -29,8 +29,6 @@
   ],
   "exclude": [
     "node_modules",
-    "dist",
-    "../design-system/src/testing",
-    "../design-system/src/**/*.spec.ts"
+    "dist"
   ]
 }

@@ -17,20 +17,33 @@ export default defineComponent({
     return {
       isVue2,
       isVue3,
+      compatibleValue: "",
     };
   },
-  computed: {
+  watch: {
+    value: {
+      handler: "handleValue",
+      immediate: true,
+    },
+    modelValue: {
+      handler: "handleValue",
+      immediate: true,
+    },
     compatibleValue: {
-      get(): string | undefined {
-        return isVue2 ? this.value : this.modelValue;
-      },
-      set(value: string): void {
-        if (isVue2) {
-          this.$emit("input", value);
-        } else {
-          this.$emit("update:modelValue", value);
-        }
-      },
+      handler: "handleCompatibleValue",
+      immediate: true,
+    },
+  },
+  methods: {
+    handleValue(value: string | undefined): void {
+      if (value !== undefined) this.compatibleValue = value;
+    },
+    handleCompatibleValue(value: string): void {
+      if (isVue2) {
+        this.$emit("input", value);
+      } else {
+        this.$emit("update:modelValue", value);
+      }
     },
   },
 });
@@ -46,11 +59,11 @@ export default defineComponent({
     padding-left: 0;
     padding-right: 0;
     border: 0;
-    border-bottom: 1px solid mediumseagreen;
+    border-bottom: 1px solid grey;
     outline: none;
 
     &:focus {
-      border-bottom-color: darkseagreen;
+      border-bottom-color: black;
     }
   }
 }
